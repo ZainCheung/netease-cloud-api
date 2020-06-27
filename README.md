@@ -1,4 +1,4 @@
-## 网易云音乐刷等级API
+## 网易云音乐升级API
 
 <p align="center">
     <a href="https://github.com/ZainCheung"><img alt="Author" src="https://img.shields.io/badge/author-ZainCheung-blueviolet"/></a>
