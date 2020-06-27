@@ -6,7 +6,7 @@
     <img src="https://visitor-badge.glitch.me/badge?page_id=ZainCheung.netease-cloud-api"/>
 </p>
 
-这是一个能够提供网易云音乐每日听满300首歌曲的基于PHP语言的API项目，配合python全自动脚本项目使用更佳。全自动脚本项目：https://github.com/ZainCheung/netease-cloud
+这是一个通过调用官方接口，能够提供网易云音乐每日听满300首歌曲的基于PHP语言的API项目，配合python全自动脚本项目使用更佳。全自动脚本项目：https://github.com/ZainCheung/netease-cloud
 
 ## 灵感来自
 
