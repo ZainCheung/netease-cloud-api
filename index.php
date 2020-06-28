@@ -59,6 +59,11 @@ class API{
     }
 
     // main function
+    public function index(){
+        $string = file_get_contents("help.html");
+        // echo $string;
+        return $string;
+    }
     // login by phone
     public function login($cell,$pwd){
         $url="https://music.163.com/weapi/login/cellphone";
@@ -217,11 +222,11 @@ $api= new API();
 $api->follow();
 //test();
 if($_REQUEST["do"]=="login"){
-    echo $api->login($_REQUEST["uin"],$_REQUEST["pwd"]);}
-    elseif($_REQUEST["do"]=="email"){echo $api->loginByEmail($_REQUEST["uin"],$_REQUEST["pwd"]);}
-    elseif($_REQUEST["do"]=="sign"){echo $api->sign();}
-    elseif($_REQUEST["do"]=="daka"){echo $api->daka_new();}
-    elseif($_REQUEST["do"]=="check"){echo $api->follow();}
-    elseif($_REQUEST["do"]=="detail"){echo $api->detail($_REQUEST["uid"]);}
-
+echo $api->login($_REQUEST["uin"],$_REQUEST["pwd"]);}
+elseif($_REQUEST["do"]=="email"){echo $api->loginByEmail($_REQUEST["uin"],$_REQUEST["pwd"]);}
+elseif($_REQUEST["do"]=="sign"){echo $api->sign();}
+elseif($_REQUEST["do"]=="daka"){echo $api->daka_new();}
+elseif($_REQUEST["do"]=="check"){echo $api->follow();}
+elseif($_REQUEST["do"]=="detail"){echo $api->detail($_REQUEST["uid"]);}
+else{echo $api->index();}
 ?>
