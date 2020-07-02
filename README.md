@@ -5,8 +5,9 @@
     <img alt="PHP" src="https://img.shields.io/badge/code-PHP-success"/>
     <img src="https://visitor-badge.glitch.me/badge?page_id=ZainCheung.netease-cloud-api"/>
 </p>
+这是一个通过调用官方接口，能够提供网易云音乐每日听满300首歌曲的基于PHP语言的API项目。
 
-这是一个通过调用官方接口，能够提供网易云音乐每日听满300首歌曲的基于PHP语言的API项目，配合python全自动脚本项目使用更佳。全自动脚本项目：https://github.com/ZainCheung/netease-cloud
+强烈建议配合python全自动脚本项目使用更佳：https://github.com/ZainCheung/netease-cloud
 
 ## 灵感来自
 
@@ -27,7 +28,7 @@
 
 下面三种方法，第一种第二种最简单但速度慢，而且需要你有网站账号，第三种访问速度快但需要你有服务器，大家自己取舍，但基本上有服务器了都想自己搭建吧，大家随意
 
-### 方法一
+## 方法一 导入GitHub
 
 1. fork这个API项目到你的仓库
 
@@ -40,27 +41,41 @@
 
 #### 1. fork项目
 
-感谢Star
-
 ![](https://s1.ax1x.com/2020/06/29/NWoCGj.png)
 
 #### 2. 导入项目
 
-填入你的的git地址,地址在你的Github项目的clone按钮里,要用https
+##### 2-1. 填入你的的git地址,地址在你的Github项目的clone按钮里,要用https
 
 ![](https://s1.ax1x.com/2020/06/29/NWo8L6.png)
 
-改自己项目名
+##### 2-2. 改自己项目名
 
 ![](https://s1.ax1x.com/2020/06/29/NWocTS.png)
 
-### 方法二
+##### 2-3. 获得API地址
 
-或者可以直接复制一份这个API项目成为你的项目,打开 https://glitch.com/edit/#!/netease-cloud-api 选择右上角的 `Remix to Exit`，即可成为你自己的项目，你便可以对代码进行修改，自定义你的域名
+![](https://s1.ax1x.com/2020/07/02/Nb1c1e.png)
+
+##### 又或者
+
+![](https://s1.ax1x.com/2020/07/02/Nb1WnA.png)
+
+## 方法二 直接复制项目
+
+或者可以直接复制一份这个API项目成为你的项目,进入开发者的api服务器： https://glitch.com/edit/#!/netease-cloud-api 选择右上角的 `Remix to Exit`，即可成为你自己的项目，你便可以对代码进行修改，自定义你的域名。
 
 ![](https://s1.ax1x.com/2020/06/29/NWTJcn.png)
 
-### 方法三
+##### 获得API地址
+
+![](https://s1.ax1x.com/2020/07/02/Nb1c1e.png)
+
+##### 又或者
+
+![](https://s1.ax1x.com/2020/07/02/Nb1WnA.png)
+
+## 方法三 服务器部署
 
 部署到服务器，对于新手还是比较建议安装宝塔面板，然后就可以在浏览器中进行界面化操作，免得有的人不会Linux的命令行。
 
