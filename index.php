@@ -119,9 +119,9 @@ class API{
         $playlist = $this->personalized(100);
         $ids = array();
         $count=0;
-        for ($i = 0; sizeof($ids) < 310; $i++) {
+        for ($i = 0; sizeof($ids) < 1000; $i++) {
         	$songid = $this->getsongid($playlist[rand(0,sizeof($playlist)-1)]);
-        	for ($k=0;sizeof($ids) < 310&&$k<sizeof($songid);$k++) {
+        	for ($k=0;sizeof($ids) < 1000&&$k<sizeof($songid);$k++) {
         	
         	$ids[$count]["action"]="play";
         	$ids[$count]["json"]["download"] =0 ;
