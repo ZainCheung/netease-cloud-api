@@ -101,8 +101,22 @@ class API{
 		return $id;
         
     }
+    // 获取推荐歌单
+    public function personalized($limit){
+        $url="https://music.163.com/weapi/personalized/playlist";
+        $data=array(
+            "limit"=>$limit,
+            "total"=>"true",
+            "n"=>1000,);
+        $json = json_decode($this->curl($url,$this->prepare($data),true),1);
+		foreach ($json["result"] as $i => $k) {
+			$id[$i] = $k["id"];
+		}
+		return $id;
+    }
     public function daka_new(){
-        $playlist = $this->recommend();
+        //$playlist = $this->recommend();
+        $playlist = $this->personalized(100);
         $ids = array();
         $count=0;
         for ($i = 0; sizeof($ids) < 310; $i++) {
