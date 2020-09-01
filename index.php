@@ -69,7 +69,6 @@ class API{
         $url="https://music.163.com/weapi/login/cellphone";
         $data=array(
         "phone"=>$cell,
-        "countrycode"=>"86",
         "countrycode"=>$countrycode,
         "password"=>$pwd,
         "rememberLogin"=>"true");
