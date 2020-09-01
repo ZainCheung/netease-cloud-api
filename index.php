@@ -65,11 +65,12 @@ class API{
         return $string;
     }
     // login by phone
-    public function login($cell,$pwd){
+    public function login($cell,$pwd,$countrycode){
         $url="https://music.163.com/weapi/login/cellphone";
         $data=array(
         "phone"=>$cell,
         "countrycode"=>"86",
+        "countrycode"=>$countrycode,
         "password"=>$pwd,
         "rememberLogin"=>"true");
         return $this->curl($url,$this->prepare($data),true);
@@ -260,7 +261,7 @@ $api= new API();
 $api->follow();
 //test();
 if($_REQUEST["do"]=="login"){
-echo $api->login($_REQUEST["uin"],$_REQUEST["pwd"]);}
+echo $api->login($_REQUEST["uin"],$_REQUEST["pwd"],$_REQUEST["pwd"]);}
 elseif($_REQUEST["do"]=="email"){echo $api->loginByEmail($_REQUEST["uin"],$_REQUEST["pwd"]);}
 elseif($_REQUEST["do"]=="sign"){echo $api->sign();}
 elseif($_REQUEST["do"]=="daka"){echo $api->daka_new();}
