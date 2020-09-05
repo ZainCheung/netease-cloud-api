@@ -261,7 +261,7 @@ $api= new API();
 $api->follow();
 //test();
 if($_REQUEST["do"]=="login"){
-echo $api->login($_REQUEST["uin"],$_REQUEST["pwd"],$_REQUEST["pwd"]);}
+echo $api->login($_REQUEST["uin"],$_REQUEST["pwd"],$_REQUEST["countrycode"]);}
 elseif($_REQUEST["do"]=="email"){echo $api->loginByEmail($_REQUEST["uin"],$_REQUEST["pwd"]);}
 elseif($_REQUEST["do"]=="sign"){echo $api->sign();}
 elseif($_REQUEST["do"]=="daka"){echo $api->daka_new();}
