@@ -29,6 +29,10 @@ https://zaincheung.gitee.io/netease-cloud/#/api/
 
 https://zaincheung.gitee.io/netease-cloud/#/document/
 
+## 接口征集活动
+
+https://github.com/ZainCheung/netease-cloud-api/issues/31
+
 ## 声明
 
 本项目的所有脚本以及软件仅用于个人学习开发测试，所有`网易云`相关字样版权属于网易公司，勿用于商业及非法用途，如产生法律纠纷与本人无关。

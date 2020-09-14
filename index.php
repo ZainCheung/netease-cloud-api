@@ -65,11 +65,12 @@ class API{
         return $string;
     }
     // login by phone
-    public function login($cell,$pwd){
+    public function login($cell,$pwd,$countrycode){
         $url="https://music.163.com/weapi/login/cellphone";
         $data=array(
         "phone"=>$cell,
         "countrycode"=>"86",
+        "countrycode"=>$countrycode,
         "password"=>$pwd,
         "rememberLogin"=>"true");
         return $this->curl($url,$this->prepare($data),true);
@@ -101,13 +102,27 @@ class API{
 		return $id;
         
     }
+    // 获取推荐歌单
+    public function personalized($limit){
+        $url="https://music.163.com/weapi/personalized/playlist";
+        $data=array(
+            "limit"=>$limit,
+            "total"=>"true",
+            "n"=>1000,);
+        $json = json_decode($this->curl($url,$this->prepare($data),true),1);
+		foreach ($json["result"] as $i => $k) {
+			$id[$i] = $k["id"];
+		}
+		return $id;
+    }
     public function daka_new(){
-        $playlist = $this->recommend();
+        //$playlist = $this->recommend();
+        $playlist = $this->personalized(100);
         $ids = array();
         $count=0;
-        for ($i = 0; sizeof($ids) < 310; $i++) {
+        for ($i = 0; sizeof($ids) < 1000; $i++) {
         	$songid = $this->getsongid($playlist[rand(0,sizeof($playlist)-1)]);
-        	for ($k=0;sizeof($ids) < 310&&$k<sizeof($songid);$k++) {
+        	for ($k=0;sizeof($ids) < 1000&&$k<sizeof($songid);$k++) {
         	
         	$ids[$count]["action"]="play";
         	$ids[$count]["json"]["download"] =0 ;
@@ -246,7 +261,7 @@ $api= new API();
 $api->follow();
 //test();
 if($_REQUEST["do"]=="login"){
-echo $api->login($_REQUEST["uin"],$_REQUEST["pwd"]);}
+echo $api->login($_REQUEST["uin"],$_REQUEST["pwd"],$_REQUEST["countrycode"]);}
 elseif($_REQUEST["do"]=="email"){echo $api->loginByEmail($_REQUEST["uin"],$_REQUEST["pwd"]);}
 elseif($_REQUEST["do"]=="sign"){echo $api->sign();}
 elseif($_REQUEST["do"]=="daka"){echo $api->daka_new();}
