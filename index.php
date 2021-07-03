@@ -165,7 +165,7 @@ class API{
         return '{"code":200,"count":'.$count.'}';
     }
     public function getsongid($playlist_id){
-        $url='https://music.163.com/weapi/v3/playlist/detail?csrf_token=';
+        $url='https://music.163.com/weapi/v6/playlist/detail?csrf_token=';
         $data=array(
             'id'=>$playlist_id,
             'n'=>1000,
